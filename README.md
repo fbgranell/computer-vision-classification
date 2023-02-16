@@ -1,5 +1,5 @@
 # Deep Learning Implementation
-<a href="https://fbgranell.com/projects/deep-learning-implementation/"><kbd><img src="figures/header.png" style="border-radius: 5px;"></kbd></a>
+<a href="https://fbgranell.com/projects/deep-learning-implementation/" target="_blank"><img src="figures/header_rounded.png"></a>
 <a href="https://fbgranell.com/" target="_blank">Fernando Borrero Granell</a>
 <br><br>
 
@@ -102,7 +102,7 @@ Now we could compute the derivates with respect to the parameters, but the formu
 
 #### 2.4 Layer <em>l</em>.
 
-We can generalize our equations for a layer $l<L$ according to the following expressions:
+We can generalize our equations for a layer $l$ according to the following expressions:
 
 $$  \frac{\partial L}{\partial\vec{z}^{[l]}} = W^{[l+1]T} \frac{\partial L}{\partial\vec{z}^{[l+1]}}*g'(\vec{z}^{[l]}), \quad \frac{\partial L}{\partial W^{[l]}} = \frac{\partial L}{\partial\vec{z}^{[l]}} \vec{a}^{[l-1]T}, \quad \frac{\partial L}{\partial\vec{b}^{[l]}} = \frac{\partial L}{\partial\vec{z}^{[l]}}$$
 
@@ -120,16 +120,16 @@ We are now prepared to build the model, train it using gradient descent by emplo
 ### 3. Results
 I trained my neural network on a small dataset of over 250 images containing some cat and non-cat pictures.
 
-<img src="figures/cats_preview.png" style="border-radius: 3px;">
+<img src="figures/cats_preview.png">
 
 The algorithm worked as expected and so the model was succesfully trained by it. The cost function decreases in each iteration of gradient descent towards a global minimum, as we can see in the plot below.
 
-<img src="figures/cost.png" style="border-radius: 5px;">
+<img src="figures/cost_rounded.png">
 
 
 The model was then evaluated on a test dataset, where it achieved an accuracy of **82%**. While it's true that we could potentially improve the performance of the model by utilizing a larger dataset and adjusting the model's architecture, we're limited to using only 250 photos. Fortunately, this quantity is sufficient for the project's objectives. You can see the test results here:
 
-<img src="figures/cats_predict.png" style="border-radius: 5px;">
+<img src="figures/cats_predict_rounded.png">
 
 
 <a id='section4'></a>
