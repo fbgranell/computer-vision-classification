@@ -1,7 +1,7 @@
 # Deep Learning Implementation
-<a href="https://fbgranell.com/projects/deep-learning-implementation/" target="_blank"><img src="figures/header_rounded.png"></a>
-<a href="https://fbgranell.com/" target="_blank">Fernando Borrero Granell</a>
-<br><br>
+<img src="figures/header_rounded.png">
+<a href="https://fbgranell.com/" target="_blank">
+Fernando Borrero Granell</a>
 
 ### Index:
 
