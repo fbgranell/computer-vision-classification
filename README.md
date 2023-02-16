@@ -27,7 +27,7 @@ In this section, I will provide an explanation of the  theoretical framework for
 
 In order to train the model, we need to evaluate its predictions on some data. To achieve this, we use a cost function. We're working with a binary classification problem, thus we use the following loss function:
 
-$$ L(a^{[L]},y) = \left[ y \ln (a^{[L]}) + (1-y) \ln (1-a^{[L]})\right] $$ 
+$$ L(a^{[L]},y) = -\left[ y \ln (a^{[L]}) + (1-y) \ln (1-a^{[L]})\right] $$ 
 
 We define our neural network by its parameters, which are stored in matrices $W^{[l]}$ and vectors $b^{[l]}$.
 
@@ -55,7 +55,7 @@ $$ a^{[l]}_u = g^{[l]} \left( \sum_{j=1}^{n^{[l-1]}} w_{u,j}^{[l]} a_j^{[l-1]}+
 #### 2.1 Layer <em>L</em>
 The output layer is the easiest to solve since it works with one single neuron. If we apply a bit of calculus, we can compute the derivative of the loss function as
 
-$$ \frac{\partial L}{\partial a^{[L]}} = L'(a^{[L]}) = \frac{y}{a^{[L]}}-\frac{1-y}{1-a^{[L]}} $$
+$$ \frac{\partial L}{\partial a^{[L]}} = L'(a^{[L]}) = -\frac{y}{a^{[L]}}+\frac{1-y}{1-a^{[L]}} $$
 
 The output layer is working with a sigmoid activation function, thus $$a^{[L]}=g(z^{[L]})= \frac{1}{1+e^{-z^{[L]}}} $$. We can compute its derivate by applying the chain rule from calculus
 
@@ -63,9 +63,9 @@ $$ g'(z^{[L]})=\frac{(-1)(-1)e^{-z^{[L]}}}{(1+e^{-z^{[L]}})^2}=\frac{(1+e^{-z^{[
 
 Now we are ready to easily compute the derivate from respect to $z^{[L]}$ as follows
 
-$$ \frac{\partial L}{\partial z^{[L]}} = \frac{\partial L}{\partial a^{[L]}}\frac{\partial a^{[L]}}{\partial z^{[L]}} = \left( \frac{y}{a^{[L]}}-\frac{1-y}{1-a^{[L]}} \right) a^{[L]}(1-a^{[L]})  $$
+$$ \frac{\partial L}{\partial z^{[L]}} = \frac{\partial L}{\partial a^{[L]}}\frac{\partial a^{[L]}}{\partial z^{[L]}} = \left( -\frac{y}{a^{[L]}}+\frac{1-y}{1-a^{[L]}} \right) a^{[L]}(1-a^{[L]})  $$
 
-$$ = y(1-a^{[L]})-(1-y)a^{[L]}=y-a^{[L]}y-a^{[L]}+a^{[L]}y=y-a^{[L]}$$
+$$ = -y(1-a^{[L]})+(1-y)a^{[L]}=-y+a^{[L]}y+a^{[L]}-a^{[L]}y=a^{[L]}-y$$
 
 The last gradient computed for the layer is those with respect to the parameters, which we will need to perform gradient descent.
 
