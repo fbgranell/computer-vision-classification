@@ -120,7 +120,7 @@ We are now prepared to build the model, train it using gradient descent by emplo
 ### 3. Results
 I trained my neural network on a small dataset of over 250 images containing some cat and non-cat pictures.
 
-<img src="figures/cats_preview.png">
+<img src="figures/cats_preview_rounded.png">
 
 The algorithm worked as expected and so the model was succesfully trained by it. The cost function decreases in each iteration of gradient descent towards a global minimum, as we can see in the plot below.
 
