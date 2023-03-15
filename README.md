@@ -18,9 +18,6 @@ Neural networks are widely regarded as one of the most powerful tools in the fie
 
 In this particular side project, I took on the challenge of creating a neural network completely from scratch, without any assistance from machine learning libraries. This meant writing all the code myself and relying solely on numpy matrices. Thanks to all of this work, I was able to gain a deeper understanding of the fundamental workings of neural networks.
 
-You can check the code <a href="https://github.com/fbgranell/computer-vision-classification">here</a>.
-
-
 <a id='section2'></a>
 ### 2. Theory
 In this section, I will provide an explanation of the  theoretical framework for this project. This will involve deriving the mathematical expressions that are used in creating neural networks.
