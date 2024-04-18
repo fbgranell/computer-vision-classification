@@ -28,7 +28,8 @@ $$ L(a^{[L]},y) = -\left[ y \ln (a^{[L]}) + (1-y) \ln (1-a^{[L]})\right] $$
 
 We define our neural network by its parameters, which are stored in matrices $W^{[l]}$ and vectors $b^{[l]}$.
 
-$$ W^{[l]}= \begin{pmatrix}
+```math
+ W^{[l]}= \begin{pmatrix}
 \leftarrow \vec{w}_1^{[l]} \rightarrow \\
 \leftarrow \vec{w}_2^{[l]}\rightarrow \\
 \vdots \\
@@ -39,8 +40,8 @@ b_1^{[l]} \\
 b_2^{[l]} \\
 \vdots \\
 b_{n^{[l]}}^{[l]} \\
-\end{pmatrix}$$
-
+\end{pmatrix} $$
+``` 
 We compute the activation values through forward propagation while using the former parameters:
 
 $$ \vec{a}^{[l]} = g^{[l]}(\vec{z}^{[l]}) = g^{[l]}(W^{[l]}\cdot \vec{a}^{[l-1]}+\vec{b}^{[l]}) $$
