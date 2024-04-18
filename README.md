@@ -48,7 +48,9 @@ $$ \vec{a}^{[l]} = g^{[l]}(\vec{z}^{[l]}) = g^{[l]}(W^{[l]}\cdot \vec{a}^{[l-1]}
 
 This expression can also be written for a specific unit $u$ of the layer $l$ as:
 
-$$ a^{[l]}_u = g^{[l]} \left( \sum_{j=1}^{n^{[l-1]}} w_{u,j}^{[l]} a_j^{[l-1]}+b_u^{[l]} \right) $$
+```math
+a^{[l]}_u = g^{[l]} \left( \sum_{j=1}^{n^{[l-1]}} w_{u,j}^{[l]} a_j^{[l-1]}+b_u^{[l]} \right)
+```
 
 #### 2.1 Layer <em>L</em>
 The output layer is the easiest to solve since it works with one single neuron. If we apply a bit of calculus, we can compute the derivative of the loss function as
@@ -82,10 +84,13 @@ $$ \frac{\partial L}{\partial z_u^{[L-1]}} = \frac{\partial L}{\partial a_u^{[L-
 
 As in the previous layer, the last step in this layer is to compute the gradients with respect to the parameters.
 
-$$ \frac{\partial L}{\partial w^{[L-1]}_{u,q}} =  \frac{\partial L}{\partial z_u^{[L-1]}} \frac{\partial z_u^{[L-1]}}{\partial w^{[L-1]}_{u,q}} = \frac{\partial L}{\partial z_u^{[L-1]}} a_q^{[L-2]} \Rightarrow \frac{\partial L}{\partial W^{[L-1]}} = \frac{\partial L}{\partial\vec{z}^{[L-1]}} \vec{a}^{[L-2]T}$$
+```math
+\frac{\partial L}{\partial w^{[L-1]}_{u,q}} =  \frac{\partial L}{\partial z_u^{[L-1]}} \frac{\partial z_u^{[L-1]}}{\partial w^{[L-1]}_{u,q}} = \frac{\partial L}{\partial z_u^{[L-1]}} a_q^{[L-2]} \Rightarrow \frac{\partial L}{\partial W^{[L-1]}} = \frac{\partial L}{\partial\vec{z}^{[L-1]}} \vec{a}^{[L-2]T}
+```
 
-$$ \frac{\partial L}{\partial b^{[L-1]}_{u}} =  \frac{\partial L}{\partial z_u^{[L-1]}} \frac{\partial z_u^{[L-1]}}{\partial b^{[L-1]}_{u}} = \frac{\partial L}{\partial z_u^{[L-1]}} 1\Rightarrow \frac{\partial L}{\partial\vec{b}^{[L-1]}} = \frac{\partial L}{\partial\vec{z}^{[L-1]}}$$
-
+```math
+\frac{\partial L}{\partial b^{[L-1]}_{u}} =  \frac{\partial L}{\partial z_u^{[L-1]}} \frac{\partial z_u^{[L-1]}}{\partial b^{[L-1]}_{u}} = \frac{\partial L}{\partial z_u^{[L-1]}} 1\Rightarrow \frac{\partial L}{\partial\vec{b}^{[L-1]}} = \frac{\partial L}{\partial\vec{z}^{[L-1]}}
+```
 #### 2.3 Layer <em>L-2</em>.
 
 This step is a bit more complex than the previous one $L \rightarrow L-1$, since we go from one layer with $n^{[L-1]}$ units to one with $n^{[L-2]}$ neurons.
